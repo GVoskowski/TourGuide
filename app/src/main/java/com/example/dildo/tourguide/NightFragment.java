@@ -24,10 +24,10 @@ public class NightFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.places_list, container, false);
 
         final ArrayList<Place> bars = new ArrayList<>();
-        bars.add(new Place(R.string.brettos_bar,R.string.brettos_bar_desc,12,30948,R.drawable.brettos_bar));
-        bars.add(new Place(R.string.dalliance_house,R.string.dalliance_house_desc,9,170984,R.drawable.dalliance_house));
-        bars.add(new Place (R.string.baba_au_rum,R.string.baba_desc,8,21433,R.drawable.au_rum));
-        bars.add(new Place(R.string.the_clumsies,R.string.the_clumsies_desc,7,84732,R.drawable.clumsies));
+        bars.add(new Place(R.string.brettos_bar, R.string.brettos_bar_desc, 12, 30948, R.drawable.brettos_bar));
+        bars.add(new Place(R.string.dalliance_house, R.string.dalliance_house_desc, 9, 170984, R.drawable.dalliance_house));
+        bars.add(new Place(R.string.baba_au_rum, R.string.baba_desc, 8, 21433, R.drawable.au_rum));
+        bars.add(new Place(R.string.the_clumsies, R.string.the_clumsies_desc, 7, 84732, R.drawable.clumsies));
 
         PlaceAdapter itemsAdapter = new PlaceAdapter(getActivity(), bars);
 
@@ -47,11 +47,6 @@ public class NightFragment extends Fragment {
                 */
             }
         });
-
-
-
-
-
 
 
         return rootView;

@@ -1,7 +1,6 @@
 package com.example.dildo.tourguide;
 
 
-
 class Place {
 
     private final int mPlaceName;

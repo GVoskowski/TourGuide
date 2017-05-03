@@ -1,29 +1,27 @@
 package com.example.dildo.tourguide;
 
+import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 
-
 class CategoryAdapter extends FragmentPagerAdapter {
 
-    private static final String SIGHT = "Sightseeings";
-    private static final String NIGHT = "Night Life";
-    private static final String FOOD = "Restaurants";
-    private static final String HOTELS = "Hotels";
-    private final String[] tabTitles = new String[]{SIGHT, NIGHT, FOOD, HOTELS};
+
+    private Context mContext;
 
 
-    CategoryAdapter(FragmentManager fm) {
+    CategoryAdapter(Context context, FragmentManager fm) {
         super(fm);
+        mContext = context;
     }
 
 
     @Override
     public android.support.v4.app.Fragment getItem(int position) {
-        if (position==0){
-        return new SightFragment();}
-        else
+        if (position == 0) {
+            return new SightFragment();
+        } else
             return new NightFragment();
 
     }
@@ -35,6 +33,16 @@ class CategoryAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabTitles[position];
+        switch (position) {
+            case 0:
+                return mContext.getString(R.string.sight_tab_name);
+            case 1:
+                return mContext.getString(R.string.night_tab_name);
+            case 2:
+                return mContext.getString(R.string.food_tab_name);
+            case 3:
+                return mContext.getString(R.string.hotel_tab_name);
+        }
+        return null;
     }
 }

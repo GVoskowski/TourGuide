@@ -12,9 +12,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 class PlaceAdapter extends ArrayAdapter<Place> {
-
+@BindView(R.id.imageView) ImageView mImageView;
     PlaceAdapter(@NonNull Activity context, ArrayList<Place> places) {
         super(context, 0 ,places);
     }
@@ -33,11 +36,12 @@ class PlaceAdapter extends ArrayAdapter<Place> {
         Place place_item = getItem(position);
         //find the textview in list_item with id default_text_view and price_text_view
 
-        TextView placeNameTextView = (TextView) listItemView.findViewById(R.id.textView_place_name);
-        TextView descriptionTextView = (TextView) listItemView.findViewById(R.id.textView_place_description);
-        TextView priceTextView = (TextView) listItemView.findViewById(R.id.textView_place_price);
-        TextView likesTextView = (TextView)listItemView.findViewById(R.id.textView_place_likes);
-        ImageView mImageView = (ImageView) listItemView.findViewById(R.id.imageView);
+        TextView placeNameTextView = ButterKnife.findById(listItemView,R.id.textView_place_name);
+        TextView descriptionTextView = ButterKnife.findById(listItemView,R.id.textView_place_description);
+        TextView priceTextView = ButterKnife.findById(listItemView,R.id.textView_place_price);
+        TextView likesTextView = ButterKnife.findById(listItemView,R.id.textView_place_likes);
+        ImageView mImageView = ButterKnife.findById(listItemView,R.id.imageView);
+
 
 
         assert place_item != null;
