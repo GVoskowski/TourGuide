@@ -12,12 +12,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 class PlaceAdapter extends ArrayAdapter<Place> {
-@BindView(R.id.imageView) ImageView mImageView;
+
     PlaceAdapter(@NonNull Activity context, ArrayList<Place> places) {
         super(context, 0 ,places);
     }
